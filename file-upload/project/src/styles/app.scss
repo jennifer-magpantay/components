@@ -1,15 +1,16 @@
 // SETTINGS
 @use "./reset";
 @use "./variables";
+@use "./fonts";
 
 // HELPERS
 @use "./responsive";
 @use "./mixins";
 
+// STRUCTURE
+@use "./structure";
+
 // BASE
 @use "./headings";
 
 // COMPONENTS
-
-// STRUCTURE
-@use "./structure";
