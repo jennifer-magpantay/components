@@ -1,5 +1,6 @@
 @use "../variables" as *;
 @use "../mixins" as *;
+@use "../responsive" as *;
 
 header {
   width: 100%;
@@ -7,6 +8,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: gap(2) gap(6);
+  padding: gap(2);
   border-bottom: 01px solid $gray-lg;
+
+  @include for-tablet-landscape-up {
+    padding: gap(2) gap(8);
+  }
 }

@@ -1,6 +1,6 @@
 // MAIN COLORS
-$primary-color: #7c3aed;
-$primary-color-lg: #e9e3f8;
+$primary-color: #5412c4;
+$primary-color-lg: #f9f6fe;
 
 $secondary-color: #73b172;
 $secondary-color-lg: #daf2d9;
@@ -11,6 +11,7 @@ $black: #040109; // based on primary color shades
 
 $title: #040109;
 $text: #242424;
+$background: #fafafa;
 
 // https://mdigi.tools/color-shades/#ffffff
 $gray: #808080;
@@ -22,6 +23,7 @@ $disabled: #e3e3ed;
 
 // EFFECTS
 $box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+$box-shadow-primary: 0px 10px 15px -3px rgba(84, 18, 196, 0.1);
 
 // TEXT - FONT WEIGHT
 $light: 300;

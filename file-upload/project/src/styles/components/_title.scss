@@ -1,0 +1,10 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.title {
+  width: 100%;
+  display: block;
+  margin: gap(4) auto;
+  color: $gray-dark;
+  text-align: center;
+}

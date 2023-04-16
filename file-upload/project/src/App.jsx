@@ -1,6 +1,8 @@
 import "./styles/app.scss";
-import { UploadComponent } from "./components/UploadComponent";
+
 import { Header } from "./components/Header";
+import { Title } from "./components/Title";
+import { UploadComponent } from "./components/UploadComponent";
 import { Footer } from "./components/Footer";
 
 export const App = () => {
@@ -8,14 +10,9 @@ export const App = () => {
     <>
       <Header />
       <div className="app-container">
-        <h1>Hello Stranger</h1>
-        <p>Some</p>
+        <Title text="File Uploader" />
         <main>
-          <section className="upload-files">
-            <h1>Upload Files</h1>
-            <p>Click or drag files to upload</p>
-            <UploadComponent />
-          </section>
+          <UploadComponent />
         </main>
       </div>
       <Footer />
