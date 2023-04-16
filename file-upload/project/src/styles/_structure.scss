@@ -3,8 +3,12 @@
 @use "./mixins" as *;
 
 html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
-  height: 100vh;
   font-family: "Lato", sans-serif;
   font-size: toRem(14);
   color: $text;
@@ -12,5 +16,10 @@ body {
 
   @include for-tablet-landscape-up {
     font-size: toRem(16);
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
   }
 }
