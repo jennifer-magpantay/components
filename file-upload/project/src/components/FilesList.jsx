@@ -3,13 +3,23 @@ export const FilesList = ({ files }) => {
   return (
     <>
       {files && (
-        <ul>
-          {files.map((file, index) => (
-            <li key={index} id={file.lastModified}>
-              <FileItem filename={file.name} lastModified={file.lastModified} />
-            </li>
-          ))}
-        </ul>
+        <section className="files">
+          <ul className="files__list">
+            {files.map((file, index) => (
+              <li
+                key={index}
+                className="file__list--item"
+                id={file.lastModified}
+              >
+                <FileItem
+                  name={file.name}
+                  type={file.type}
+                  lastModified={file.lastModified}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
     </>
   );
