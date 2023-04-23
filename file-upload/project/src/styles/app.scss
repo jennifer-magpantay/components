@@ -5,6 +5,7 @@
 
 // HELPERS
 @use "./responsive";
+@use "./functions";
 @use "./mixins";
 
 // STRUCTURE
@@ -20,3 +21,4 @@
 @use "./components/uploadComponent";
 @use "./components/filesList";
 @use "./components/fileItem";
+@use "./components/card";
