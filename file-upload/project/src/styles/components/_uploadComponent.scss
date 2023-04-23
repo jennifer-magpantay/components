@@ -1,39 +1,41 @@
 @use "../variables" as *;
 @use "../mixins" as *;
+@use "../functions" as *;
+@use "../responsive" as *;
 
-.upload-container {
-  width: 100%;
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  margin: 0 auto;
-  padding: gap(4);
-  background-color: $primary-color-lg;
-  border: 01px solid $gray-lg;
-  border-radius: 8px;
-  box-shadow: $box-shadow-primary;
+.uploader {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
 
-  h2 {
-    color: $primary-color;
-  }
+    padding: gap(4);
+    background-color: $primary-color-lg;
+    border: 01px solid $gray-lg;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-primary;
 
-  h2,
-  p {
-    text-align: center;
-  }
+    h2 {
+      color: $primary-color;
+    }
 
-  input[type="file"] {
-    all: unset;
-    position: absolute;
-    inset: 0;
-    opacity: 0;
+    h2,
+    p {
+      text-align: center;
+    }
 
-    &:hover,
-    &:focus {
-      cursor: pointer;
+    input[type="file"] {
+      all: unset;
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
     }
   }
 }
