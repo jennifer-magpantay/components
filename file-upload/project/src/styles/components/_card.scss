@@ -12,9 +12,10 @@
   flex-direction: row;
   gap: gap(1);
   padding: gap(2);
-  margin-bottom: gap(3);
-  border: 01px solid red;
+  margin-top: gap(3);
+  border: 01px solid $gray-lg;
   border-radius: $border-radius;
+  box-shadow: $box-shadow;
 
   &__aside {
     width: 44px;
@@ -49,11 +50,12 @@
       border: 03px solid transparent;
       border-radius: 50px;
       outline: none;
+      transition: all 0.3s ease;
 
       &:focus,
       &:hover {
         cursor: pointer;
-        border-color: red;
+        border-color: $gray-dark;
       }
 
       svg {

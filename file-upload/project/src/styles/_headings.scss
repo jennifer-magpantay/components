@@ -4,14 +4,6 @@
 @use "./responsive" as *;
 
 h1 {
-  font-size: toRem(39.06);
-
-  @include for-tablet-landscape-up {
-    font-size: toRem(48.83);
-  }
-}
-
-h2 {
   font-size: toRem(31.25);
 
   @include for-tablet-landscape-up {
@@ -19,21 +11,14 @@ h2 {
   }
 }
 
-h3 {
-  font-size: toRem(25);
-  @include for-tablet-landscape-up {
-    font-size: toRem(31.25);
-  }
-}
-
-h4 {
+h2 {
   font-size: toRem(20);
   @include for-tablet-landscape-up {
     font-size: toRem(25);
   }
 }
 
-h5 {
+h3 {
   font-size: toRem(16);
   @include for-tablet-landscape-up {
     font-size: toRem(20);
