@@ -10,12 +10,13 @@ export const UploadComponent = ({ onChange }) => {
           weight="bold"
           aria-hidden={true}
         />
-        <h2 className="">Upload your files</h2>
-        <p>Click or drag files to upload</p>
+        <h2 className="section">Upload your files</h2>
+        <label htmlFor="file-js">Click or drag files to upload</label>
         <input
           id="file-js"
           name="file"
           type="file"
+          accept="image/png, image/jpeg, image/svg+xml, .pdf,.doc"
           multiple
           onChange={onChange}
         />

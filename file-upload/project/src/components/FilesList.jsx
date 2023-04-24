@@ -1,9 +1,20 @@
 import { FileItem } from "./FileItem";
-export const FilesList = ({ files }) => {
+export const FilesList = ({ files, onClick }) => {
+  const title =
+    files.length != 0
+      ? "Uploaded files"
+      : "No files currently selected for upload";
   return (
     <>
       {files && (
         <section className="files">
+          <h2
+            className={
+              files.length != 0 ? "section__title" : "section__title disabled"
+            }
+          >
+            {title}
+          </h2>
           <ul className="files__list">
             {files.map((file, index) => (
               <li
@@ -15,6 +26,7 @@ export const FilesList = ({ files }) => {
                   name={file.name}
                   type={file.type}
                   lastModified={file.lastModified}
+                  onClick={onClick}
                 />
               </li>
             ))}

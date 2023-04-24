@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./styles/app.scss";
 
 import { Header } from "./components/Header";
@@ -20,6 +20,16 @@ export const App = () => {
     );
   };
 
+  const handleFileDelete = (event) => {
+    const target = event.currentTarget;
+    if (target.dataset.id === "card-button-remove") {
+      const filteredList = files.filter(
+        (file) => file.lastModified != target.id
+      );
+      setFiles(filteredList);
+    }
+  };
+
   return (
     <>
       <Header />
@@ -27,7 +37,12 @@ export const App = () => {
         <Title text="File Uploader" />
         <main>
           <UploadComponent onChange={(event) => handleUploadFile(event)} />
-          {files && <FilesList files={files} />}
+          {files && (
+            <FilesList
+              files={files}
+              onClick={(event) => handleFileDelete(event)}
+            />
+          )}
         </main>
       </div>
       <Footer />
