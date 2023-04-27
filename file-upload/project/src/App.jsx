@@ -7,6 +7,7 @@ import { UploadComponent } from "./components/UploadComponent";
 import { Footer } from "./components/Footer";
 
 import { FilesList } from "./components/FilesList";
+import { Description } from "./components/Description";
 
 export const App = () => {
   const [files, setFiles] = useState([]);
@@ -34,7 +35,8 @@ export const App = () => {
     <>
       <Header />
       <div className="app-container">
-        <Title text="File Uploader" />
+        <Title text="Upload your files" />
+        <Description text="to attach to a project" />
         <main>
           <UploadComponent onChange={(event) => handleUploadFile(event)} />
           {files && (
