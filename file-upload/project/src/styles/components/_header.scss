@@ -10,7 +10,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   padding: gap(2);
-  border-bottom: 01px solid $gray-lg;
+  border-bottom: 01px solid $gray-100;
 
   @include for-tablet-landscape-up {
     padding: gap(2) gap(8);

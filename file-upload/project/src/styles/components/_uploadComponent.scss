@@ -12,13 +12,17 @@
     position: relative;
 
     padding: gap(4);
-    background-color: $primary-color-lg;
-    border: 01px solid $gray-lg;
+    background-color: $primary-color-100;
+    border: 02px dashed $primary-color-200;
     border-radius: $border-radius;
     box-shadow: $box-shadow-primary;
 
     h2 {
-      color: $primary-color;
+      color: $gray-dark;
+
+      span {
+        color: $primary-color-800;
+      }
     }
 
     h2,
