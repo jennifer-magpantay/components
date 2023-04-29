@@ -1,7 +1,7 @@
 import { CloudArrowUp, FolderNotchPlus } from "@phosphor-icons/react";
 import { Description } from "./Description";
 
-export const UploadComponent = ({ onChange }) => {
+export const Uploader = ({ isMobile, onChange }) => {
   return (
     <section className="uploader">
       <div className="uploader__container">
@@ -15,7 +15,8 @@ export const UploadComponent = ({ onChange }) => {
         </div>
 
         <h2 className="section-title">
-          Drag & drop your files here or <span>upload from your computer</span>
+          Drag & drop your files here or{" "}
+          <span>upload from your {isMobile ? "device" : "computer"}</span>
         </h2>
         <label htmlFor="file-js">
           <span className="sr-only">Click or drag files to upload</span>
