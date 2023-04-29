@@ -3,21 +3,21 @@ import {
   X,
   FileSvg,
   FilePng,
-  ImageSquare,
+  FileJpg,
   FilePdf,
 } from "@phosphor-icons/react";
 
-export const Card = ({ id, title, type, onClick }) => {
+export const Card = ({ id, title, type, size, onClick }) => {
   const setIcon = (type) => {
     switch (type) {
       case "image/svg+xml":
         return <FileSvg size={32} color="#7d4195" />;
 
       case "image/png":
-        return <FilePng size={32} color="#128770" />;
+        return <FilePng size={32} color="#10715e" />;
 
       case "image/jpeg":
-        return <ImageSquare size={32} color="#128770" />;
+        return <FileJpg size={32} color="#e67e22" />;
 
       case "application/pdf":
         return <FilePdf size={32} color="#d12b1a" />;
@@ -31,19 +31,19 @@ export const Card = ({ id, title, type, onClick }) => {
     let color = "";
     switch (type) {
       case "image/svg+xml":
-        color = "#b687ca";
+        color = "#dfcae8";
         break;
 
       case "image/png":
-        color = "#1abc9c";
+        color = "#8ddece";
         break;
 
       case "image/jpeg":
-        color = "#1abc9c";
+        color = "#f3bf91";
         break;
 
       case "application/pdf":
-        color = "#e85040";
+        color = "#f7c0bb";
         break;
 
       default:
@@ -77,7 +77,7 @@ export const Card = ({ id, title, type, onClick }) => {
           onClick={onClick}
         >
           <span className="sr-only">Remove file</span>
-          <X size={32} weight="bold" />
+          <X size={24} />
         </button>
       </div>
     </div>
