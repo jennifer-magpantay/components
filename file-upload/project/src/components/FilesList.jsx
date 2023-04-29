@@ -1,6 +1,5 @@
 import { FileItem } from "./FileItem";
 export const FilesList = ({ files, onClick }) => {
-  console.log(files);
   const title =
     files.length != 0
       ? "Uploaded files"
