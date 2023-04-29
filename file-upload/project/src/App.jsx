@@ -27,6 +27,23 @@ export const App = () => {
     };
   });
 
+  function handleDropFile(event) {
+    event.preventDefault();
+    // access files through DataTransferItemList interface
+    if (event.dataTransfer.items) {
+      [...event.dataTransfer.items].forEach((item) => {
+        if (item.kind === "file") {
+          const file = item.getAsFile();
+          setFiles((prev) => [...prev, file]);
+        }
+      });
+    }
+  }
+  // turn off the browser's default drag and drop handler
+  function handleDragOverFile(event) {
+    event.preventDefault();
+  }
+
   const handleUploadFile = (event) => {
     const target = event.currentTarget;
     const inputFiles = target.files;
@@ -55,6 +72,8 @@ export const App = () => {
         <main>
           <Uploader
             isMobile={isMobile}
+            onDrop={(event) => handleDropFile(event)}
+            onDragOver={(event) => handleDragOverFile(event)}
             onChange={(event) => handleUploadFile(event)}
           />
           {files && (

@@ -1,10 +1,14 @@
 import { CloudArrowUp, FolderNotchPlus } from "@phosphor-icons/react";
 import { Description } from "./Description";
 
-export const Uploader = ({ isMobile, onChange }) => {
+export const Uploader = ({ isMobile, onChange, onDrop, onDragOver }) => {
   return (
     <section className="uploader">
-      <div className="uploader__container">
+      <div
+        className="uploader__container"
+        onDrop={onDrop}
+        onDragOver={onDragOver}
+      >
         <div className="icon--container-circle" aria-hidden={true}>
           <FolderNotchPlus
             size={80}
