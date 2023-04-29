@@ -1,2 +1,2 @@
 # components
- A group of usefull components buitl with React
+ A group of usefull components built in React.
