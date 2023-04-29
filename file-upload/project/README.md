@@ -2,6 +2,9 @@
 
 A Uploader component to be implement to any project. Files could be uploaded by selection or drarg & drop.
 
+## Preview
+<img width="1792" alt="Screenshot 2023-04-29 at 17 46 24" src="https://user-images.githubusercontent.com/56962997/235311581-3aa3e339-1788-45fb-9e81-b83608ffa0a9.png">
+
 ## Technologies
 
 - Vite, React, Sass, Phosphor Icons.
