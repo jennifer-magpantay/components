@@ -1,9 +1,10 @@
 import { FileItem } from "./FileItem";
 export const FilesList = ({ files, onClick }) => {
+  console.log(files);
   const title =
     files.length != 0
       ? "Uploaded files"
-      : "No files currently selected for upload";
+      : "No files currently selected for uploaded";
   return (
     <>
       {files && (
@@ -25,6 +26,7 @@ export const FilesList = ({ files, onClick }) => {
                 <FileItem
                   name={file.name}
                   type={file.type}
+                  size={file.size}
                   lastModified={file.lastModified}
                   onClick={onClick}
                 />

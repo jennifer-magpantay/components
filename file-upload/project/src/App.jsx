@@ -1,16 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles/app.scss";
+
+import { resizeHandler } from "./assets/helpers/resizeHandler";
 
 import { Header } from "./components/Header";
 import { Title } from "./components/Title";
-import { UploadComponent } from "./components/UploadComponent";
-import { Footer } from "./components/Footer";
-
-import { FilesList } from "./components/FilesList";
 import { Description } from "./components/Description";
+import { Uploader } from "./components/Uploader";
+import { FilesList } from "./components/FilesList";
+import { Footer } from "./components/Footer";
 
 export const App = () => {
   const [files, setFiles] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    resizeHandler(isMobile, setIsMobile, 900);
+    window.addEventListener("resize", () => {
+      resizeHandler(isMobile, setIsMobile, 900);
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        resizeHandler(isMobile, setIsMobile, 900);
+      });
+    };
+  });
 
   const handleUploadFile = (event) => {
     const target = event.currentTarget;
@@ -38,7 +53,10 @@ export const App = () => {
         <Title text="Upload your files" />
         <Description text="to attach to a project" />
         <main>
-          <UploadComponent onChange={(event) => handleUploadFile(event)} />
+          <Uploader
+            isMobile={isMobile}
+            onChange={(event) => handleUploadFile(event)}
+          />
           {files && (
             <FilesList
               files={files}
