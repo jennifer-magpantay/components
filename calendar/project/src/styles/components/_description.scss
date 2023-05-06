@@ -5,11 +5,9 @@
 
 .description {
   @include text-center;
-  margin-top: gap(2);
-  margin-bottom: gap(2);
-  font-family: "Poppins", sans-serif;
+  margin: gap(2) 0;
   font-size: toRem(16);
-  font-weight: 400;
+  font-weight: $regular;
   color: $gray-600;
 
   @include for-tablet-landscape-up {
