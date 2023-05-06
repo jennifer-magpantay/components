@@ -1,0 +1,92 @@
+@use "./variables" as *;
+@use "./responsive" as *;
+@use "./mixins" as *;
+@use "./functions" as *;
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: toRem(14);
+  color: $text;
+  scroll-behavior: smooth;
+  line-height: 1.4;
+
+  @include for-tablet-landscape-up {
+    font-size: toRem(16);
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.app-container {
+  width: 100%;
+  padding: gap(2);
+}
+
+main {
+  width: 100%;
+  padding: gap(2) 0;
+
+  section {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+
+    @include for-tablet-landscape-up {
+      max-width: 960px;
+      padding: 0 gap(8);
+    }
+
+    .section__title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      margin-bottom: gap(1);
+
+      &.disabled {
+        color: $gray;
+      }
+    }
+  }
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.icon--container-circle {
+  width: 100px;
+  aspect-ratio: 1/ 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: gap(2);
+  background-color: $primary-color-200;
+  border-radius: 100%;
+
+  @include for-tablet-landscape-up {
+    width: 120px;
+  }
+
+  svg {
+    width: 70%;
+
+    @include for-tablet-landscape-up {
+      width: 80%;
+    }
+  }
+}
