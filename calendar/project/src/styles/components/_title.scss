@@ -5,9 +5,9 @@
 .title {
   @include text-center;
 
-  margin-top: gap(3);
+  margin: gap(4);
   margin-bottom: gap(2);
-  color: $gray-dark;
+  color: $gray-900;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
 }
