@@ -1,10 +1,10 @@
-import { CalendarPlus } from "@phosphor-icons/react";
-
-export const Title = ({ text }) => {
+export const Title = ({ text, hasIcon, icon }) => {
   return (
     <>
-      <CalendarPlus size={32} color="#242424" />
-      <h1 className="title">{text}</h1>;
+      <h1 className="title">
+        {hasIcon && icon}
+        {text}
+      </h1>
     </>
   );
 };
