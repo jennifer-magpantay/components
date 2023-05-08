@@ -3,8 +3,12 @@
 @use "../variables" as *;
 
 .title {
-  @include text-center;
-  margin: gap(4) 0 gap(2);
-  color: $gray-900;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: gap(1);
+  margin: gap(3) 0 0;
+  color: $primary-color-800;
   font-weight: $bold;
 }
