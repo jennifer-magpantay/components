@@ -3,6 +3,8 @@
 A calendar component to be implement to any project. A date could be easely picked up and displayed in input field.
 
 ## Preview
+<img width="500" alt="Screenshot 2023-06-04 at 14 42 30" src="https://github.com/jennifer-magpantay/components/assets/56962997/6f678f84-7903-45e0-8d9d-37ae74fd68ef">
+<img width="500" alt="Screenshot 2023-06-04 at 14 42 49" src="https://github.com/jennifer-magpantay/components/assets/56962997/bc76ce90-7777-4e99-9511-1913158a0296">
 
 
 ## Technologies
