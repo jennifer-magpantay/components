@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Calendar } from "react-calendar";
+import { XCircle } from "@phosphor-icons/react";
 import { dateFormarter } from "../helpers/formaters";
 
 export const Datepicker = () => {
@@ -17,7 +18,6 @@ export const Datepicker = () => {
 
   useEffect(() => {
     window.addEventListener("click", (event) => {
-      console.log(event);
       if (event.target.localName === "main") {
         closeCalendar();
 
@@ -31,33 +31,16 @@ export const Datepicker = () => {
     });
   });
 
-  function handleInputBlur(event) {
-    console.log(event.target);
-    const { id, value } = event.target;
-    if (id === "calendar-js") {
-      closeCalendar();
-      if (value === "" || event.target.dataset.value === "") {
-        setTimeout(() => {
-          inputRef.current.classList.remove("focus");
-        }, 100);
-      } else {
-        inputRef.current.focus();
-      }
-    }
-  }
-
   function handleInputClick(event) {
     const { id } = event.target;
     if (id === "calendar-js") {
-      setIsCalendarDisplayed(true);
       inputRef.current.focus();
       inputRef.current.classList.add("focus");
+      setIsCalendarDisplayed(true);
     }
   }
 
   function handleCalendarClickDay(event, value) {
-    const target = event.target;
-    console.log(target);
     inputRef.current.value = dateFormarter(event);
     inputRef.current.dataset.value = dateFormarter(event);
     inputRef.current.classList.add("focus");
@@ -66,8 +49,19 @@ export const Datepicker = () => {
   }
 
   function handleCalendarClickMonth(event, value) {
-    setIsCalendarDisplayed(true);
     inputRef.current.focus();
+    setIsCalendarDisplayed(true);
+  }
+
+  function handleCloseCalendar(event) {
+    if (
+      inputRef.current.dataset.value === null ||
+      inputRef.current.dataset.value === ""
+    ) {
+      inputRef.current.classList.remove("focus");
+      inputRef.current.blur();
+    }
+    closeCalendar();
   }
 
   function closeCalendar() {
@@ -91,15 +85,39 @@ export const Datepicker = () => {
       />
       <label htmlFor="calendar-js">Choose date</label>
 
-      <Calendar
-        onChange={onChange}
-        value={value}
-        className={isCalendarDisplayed ? "visible" : "hidden"}
-        locale="en-GB"
-        inputRef={calendarRef}
-        onClickDay={(event, value) => handleCalendarClickDay(event, value)}
-        onClickMonth={(event, value) => handleCalendarClickMonth(event, value)}
-      />
+      <div
+        className={[
+          "calendar",
+          isCalendarDisplayed ? "visible" : "hidden",
+        ].join(" ")}
+      >
+        <button
+          type="button"
+          className="calendar--button-close"
+          onClick={(event) => {
+            handleCloseCalendar(event);
+          }}
+        >
+          <span className="sr-only">Close Calendar</span>
+          <XCircle size={32} />
+        </button>
+
+        <Calendar
+          onChange={onChange}
+          value={value}
+          className={isCalendarDisplayed ? "visible" : "hidden"}
+          locale="en-GB"
+          inputRef={calendarRef}
+          nextAriaLabel="next month"
+          next2AriaLabel="next year"
+          prevAriaLabel="previous month"
+          prev2AriaLabel="previous year"
+          onClickDay={(event, value) => handleCalendarClickDay(event, value)}
+          onClickMonth={(event, value) =>
+            handleCalendarClickMonth(event, value)
+          }
+        />
+      </div>
     </div>
   );
 };
