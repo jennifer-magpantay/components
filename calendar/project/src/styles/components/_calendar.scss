@@ -3,15 +3,37 @@
 @use "../variables" as *;
 @use "../responsive" as *;
 
-.react-calendar {
+.calendar {
   width: 100%;
-  //max-width: 300px;
   margin: 0 auto;
   padding: gap(2) gap(1) gap(1);
   background-color: transparent;
   border: 01px solid $gray-100;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  &.visible {
+    visibility: visible;
+  }
+
+  &--button-close {
+    display: block;
+    margin-left: auto;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    line-height: 0;
+    outline: 0;
+  }
+}
+
+.react-calendar {
+  width: 100%;
+  background-color: transparent;
   color: $gray-900;
   font-family: inherit;
   line-height: 1.125em;
